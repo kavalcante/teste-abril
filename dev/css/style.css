@@ -1,0 +1,290 @@
+@charset "UTF-8";
+@import 'https://fonts.googleapis.com/css?family=Dosis:400,700';
+.wrapper, .row {
+  *zoom: 1; }
+  .wrapper:before, .row:before, .wrapper:after, .row:after {
+    content: " ";
+    display: table; }
+  .wrapper:after, .row:after {
+    clear: both; }
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto !important; }
+
+.wrapper {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto; }
+
+[class*='col-'] {
+  float: left;
+  padding: 1em;
+  width: 100%;
+  min-height: 1px; }
+
+@media screen and (min-width: 900px) {
+  .wrapper {
+    width: 95%;
+    max-width: 1280px; }
+  .col-1 {
+    width: 8.33333%; }
+  .col-2 {
+    width: 16.66667%; }
+  .col-3 {
+    width: 25%; }
+  .col-4 {
+    width: 33.33333%; }
+  .col-5 {
+    width: 41.66667%; }
+  .col-6 {
+    width: 50%; }
+  .col-7 {
+    width: 58.33333%; }
+  .col-8 {
+    width: 66.66667%; }
+  .col-9 {
+    width: 75%; }
+  .col-10 {
+    width: 83.33333%; }
+  .col-11 {
+    width: 91.66667%; }
+  .col-12 {
+    width: 100%; } }
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .wrapper {
+    width: 100%;
+    max-width: 1280px; } }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: #ed1c24; }
+
+/* GLOBAL CONFIG */
+body, html {
+  font-family: 'Dosis', sans-serif;
+  font-size: 1em;
+  background-color: #e6e6e6;
+  color: #242424; }
+
+/* END OF GLOBAL CONFIG */
+/* HEADER */
+header {
+  background-color: #ed1c24;
+  position: relative; }
+
+.ad-header {
+  background-color: #e6e6e6;
+  text-align: center; }
+
+.nav {
+  height: auto;
+  padding: 1em 0; }
+  .nav > ul {
+    margin-top: 13px;
+    margin-bottom: 5px; }
+    .nav > ul > li {
+      display: inline-block; }
+      .nav > ul > li > a {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-top: 27px;
+        padding-bottom: 29px;
+        padding-left: 15px;
+        padding-right: 24px;
+        position: relative; }
+        .nav > ul > li > a:hover {
+          background: #242424;
+          text-decoration: underline; }
+          .nav > ul > li > a:hover .subnivel {
+            visibility: 1; }
+        .nav > ul > li > a:focus {
+          position: absolute;
+          top: 3px;
+          right: -5px;
+          font-size: 14px;
+          color: white;
+          content: '❯';
+          transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -webkit-transform: rotate(90deg); }
+        .nav > ul > li > a:after {
+          position: absolute;
+          top: 33px;
+          right: 7px;
+          width: 0;
+          height: 0;
+          font-size: 14px;
+          color: white;
+          content: '❯';
+          transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -webkit-transform: rotate(90deg); }
+        .nav > ul > li > a.no-arrow {
+          padding-right: 15px; }
+        .nav > ul > li > a.no-arrow:after {
+          content: ''; }
+
+.subnav {
+  background-color: #242424; }
+  .subnav li {
+    display: inline;
+    padding: 5px 10px; }
+  .subnav a {
+    font-size: .9em;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase; }
+    .subnav a:hover {
+      text-decoration: underline; }
+
+.search {
+  position: relative; }
+  .search input {
+    margin-top: 7px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    color: #a3a3a3;
+    text-transform: uppercase;
+    padding-left: 10px; }
+  .search button {
+    border: 0;
+    background: #fff;
+    position: absolute;
+    right: 5px;
+    top: 14px; }
+    .search button:hover {
+      cursor: pointer; }
+    .search button:focus {
+      outline: 0; }
+
+.nav li > nav.subnivel {
+  visibility: hidden;
+  width: 100%;
+  max-width: 1320px;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  background-color: #242424; }
+
+.nav > ul > li:hover > nav.subnivel {
+  visibility: visible; }
+
+.nav > ul > li:hover > a {
+  background-color: #242424; }
+
+.subnivel {
+  border-bottom: 3px solid #ed1c24; }
+  .subnivel > ul.lista-carros {
+    padding-top: 30px; }
+    .subnivel > ul.lista-carros > li > a {
+      background-color: #474747;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold; }
+      .subnivel > ul.lista-carros > li > a:hover {
+        text-decoration: underline; }
+  .subnivel > ul.lista-teste {
+    background-color: #474747;
+    padding: 0;
+    padding-top: 15px; }
+    .subnivel > ul.lista-teste > li {
+      display: list-item;
+      padding: 10px 0;
+      width: 100%; }
+      .subnivel > ul.lista-teste > li:first-child {
+        background-color: #242424;
+        position: relative; }
+        .subnivel > ul.lista-teste > li:first-child:after {
+          position: absolute;
+          top: 13px;
+          right: 10px;
+          width: 0;
+          height: 0;
+          font-size: 14px;
+          color: white;
+          content: '❯'; }
+      .subnivel > ul.lista-teste > li > a {
+        padding: 5px 50px;
+        color: white;
+        font-weight: bold; }
+        .subnivel > ul.lista-teste > li > a:hover {
+          text-decoration: underline; }
+  .subnivel .lista-carros-marcas {
+    margin: 0; }
+    .subnivel .lista-carros-marcas > li {
+      display: inline-block;
+      padding: 10px;
+      width: 20%;
+      float: left; }
+      .subnivel .lista-carros-marcas > li a {
+        padding: 10px;
+        color: white; }
+        .subnivel .lista-carros-marcas > li a:hover {
+          text-decoration: underline; }
+  .subnivel .lista-teste-itens {
+    margin: 0; }
+    .subnivel .lista-teste-itens > li {
+      display: inline-block;
+      padding: 10px;
+      width: 20%;
+      float: left; }
+      .subnivel .lista-teste-itens > li a {
+        color: #ed1c24;
+        font-weight: bold; }
+        .subnivel .lista-teste-itens > li a h3 {
+          color: white;
+          padding-top: 10px;
+          line-height: 23px; }
+        .subnivel .lista-teste-itens > li a:hover {
+          text-decoration: underline; }

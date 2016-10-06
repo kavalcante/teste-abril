@@ -1,0 +1,332 @@
+// GRID AND FONT IMPORT
+
+@import "variables";
+@import "mixins";
+@import 'https://fonts.googleapis.com/css?family=Dosis:400,700';
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    @include border-box;
+    }
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important;
+    }
+
+.wrapper {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    }
+
+.wrapper, .row {
+    @extend %clearfix;
+    }
+
+[class*='col-'] {
+    float: left;
+    padding: 1em;
+    width: 100%;
+    min-height: 1px;
+    }
+
+@media #{$breakpoint-medium} {
+    .wrapper {
+        width: 95%;
+        max-width: $grid-max-width;
+        }
+    @for $i from 1 through $grid-columns {
+        .col-#{$i} {
+            width: 100% / $grid-columns * $i;
+            }
+        }
+    }
+@media #{$breakpoint-small}{
+  .wrapper {
+      width: 100%;
+      max-width: $grid-max-width;
+  }
+}
+
+// CSS RESET
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a{
+  text-decoration: none;
+  color: $primary;
+}
+
+/* GLOBAL CONFIG */
+
+body, html{
+  font-family: 'Dosis', sans-serif;
+  font-size: 1em;
+  background-color: $background;
+  color: $secondary;
+}
+
+
+/* END OF GLOBAL CONFIG */
+
+/* HEADER */
+
+header{
+  background-color: $primary;
+  position: relative;
+}
+
+.ad-header{
+  background-color: $background;
+  text-align: center;
+}
+
+.nav{
+  height: auto;
+  padding: 1em 0;
+  & > ul{
+    margin-top: 13px;
+    margin-bottom: 5px;
+    & > li{
+      display: inline-block;
+      & > a{
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-top: 27px;
+        padding-bottom: 29px;
+        padding-left: 15px;
+        padding-right: 24px;
+        position: relative;
+        &:hover{
+          background: $secondary;
+          text-decoration: underline;
+          & .subnivel{
+            visibility: 1;
+          }
+        }
+        &:focus{
+          position: absolute;
+          top: 3px;
+          right: -5px;
+          font-size: 14px;
+          color: white;
+          content: '❯';
+          transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+        }
+        &:after{
+          position: absolute;
+          top: 33px;
+          right: 7px;
+          width: 0;
+          height: 0;
+          font-size: 14px;
+          color: white;
+          content: '❯';
+          transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+        }
+        &.no-arrow{
+          padding-right:15px;
+        }
+        &.no-arrow:after{
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+.subnav {
+  background-color: $secondary;
+  & li{
+    display: inline;
+    padding: 5px 10px;
+  }
+  & a{
+  font-size: .9em;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.search{
+  position: relative;
+  & input{
+    margin-top: 7px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    color: #a3a3a3;
+    text-transform: uppercase;
+    padding-left: 10px;
+  }
+  & button{
+    border: 0;
+    background: #fff;
+    position: absolute;
+    right: 5px;
+    top: 14px;
+    &:hover{
+      cursor: pointer;
+    }
+    &:focus{
+      outline: 0;
+    }
+  }
+}
+
+.nav li > nav.subnivel{
+  visibility: hidden;
+  width: 100%;
+  max-width: 1320px;
+  position: absolute;
+  top:200px;
+  left: 0;
+  background-color: $secondary;
+}
+
+.nav > ul > li:hover > nav.subnivel{
+  visibility: visible;
+}
+.nav > ul > li:hover > a{
+  background-color: $secondary;
+}
+
+.subnivel{
+  border-bottom: 3px solid $primary;
+  & > ul.lista-carros{
+    padding-top: 30px;
+    & > li {
+      & > a{
+        background-color: #474747;
+        padding: 10px 20px;
+        color: white;
+        font-weight: bold;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  & > ul.lista-teste{
+    background-color: #474747;
+    padding: 0;
+    padding-top: 15px;
+    & > li {
+      display: list-item;
+      padding: 10px 0;
+      width: 100%;
+      &:first-child{
+        background-color: $secondary;
+        position: relative;
+        &:after{
+          position: absolute;
+          top: 13px;
+          right: 10px;
+          width: 0;
+          height: 0;
+          font-size: 14px;
+          color: white;
+          content: '❯';
+        }
+      }
+      & > a{
+        padding: 5px 50px;
+        color: white;
+        font-weight: bold;
+
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  & .lista-carros-marcas{
+    margin: 0;
+    & > li{
+      display: inline-block;
+      padding: 10px;
+      width: 20%;
+      float:left;
+      & a{
+        padding: 10px;
+        color: white;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  & .lista-teste-itens{
+    margin: 0;
+    & > li{
+      display: inline-block;
+      padding: 10px;
+      width: 20%;
+      float:left;
+      & a{
+        color: $primary;
+        font-weight: bold;
+        & h3{
+          color: white;
+          padding-top: 10px;
+          line-height: 23px;
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
