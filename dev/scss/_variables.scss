@@ -9,5 +9,7 @@ $background: #e6e6e6;
 
 
 // breakpoints
+$breakpoint-xs: "screen and (max-width: 600px)";
 $breakpoint-small: "screen and (min-width: 600px) and (max-width:900px)";
+$breakpoint-gt-small: "screen and (max-width: 900px)";
 $breakpoint-medium: "screen and (min-width: 900px)";

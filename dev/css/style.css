@@ -25,16 +25,15 @@ img {
   max-width: 1320px;
   margin: 0 auto; }
 
-[class*='col-'] {
-  float: left;
-  padding: 1em;
-  width: 100%;
-  min-height: 1px; }
-
 @media screen and (min-width: 900px) {
   .wrapper {
     width: 95%;
     max-width: 1280px; }
+  [class*='col-'] {
+    float: left;
+    padding: 1em;
+    width: 100%;
+    min-height: 1px; }
   .col-1 {
     width: 8.33333%; }
   .col-2 {
@@ -123,168 +122,255 @@ header {
   background-color: #e6e6e6;
   text-align: center; }
 
-.nav {
-  height: auto;
-  padding: 1em 0; }
-  .nav > ul {
-    margin-top: 13px;
-    margin-bottom: 5px; }
-    .nav > ul > li {
-      display: inline-block; }
-      .nav > ul > li > a {
-        color: white;
-        text-transform: uppercase;
-        font-weight: 700;
-        padding-top: 27px;
-        padding-bottom: 29px;
-        padding-left: 15px;
-        padding-right: 24px;
-        position: relative; }
-        .nav > ul > li > a:hover {
-          background: #242424;
-          text-decoration: underline; }
-          .nav > ul > li > a:hover .subnivel {
-            visibility: 1; }
-        .nav > ul > li > a:focus {
-          position: absolute;
-          top: 3px;
-          right: -5px;
-          font-size: 14px;
-          color: white;
-          content: '❯';
-          transform: rotate(90deg);
-          -moz-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-          -webkit-transform: rotate(90deg); }
-        .nav > ul > li > a:after {
-          position: absolute;
-          top: 33px;
-          right: 7px;
-          width: 0;
-          height: 0;
-          font-size: 14px;
-          color: white;
-          content: '❯';
-          transform: rotate(90deg);
-          -moz-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-          -webkit-transform: rotate(90deg); }
-        .nav > ul > li > a.no-arrow {
-          padding-right: 15px; }
-        .nav > ul > li > a.no-arrow:after {
-          content: ''; }
-
-.subnav {
-  background-color: #242424; }
-  .subnav li {
-    display: inline;
-    padding: 5px 10px; }
-  .subnav a {
-    font-size: .9em;
-    font-weight: 700;
-    color: white;
-    text-transform: uppercase; }
-    .subnav a:hover {
-      text-decoration: underline; }
-
-.search {
-  position: relative; }
-  .search input {
-    margin-top: 7px;
-    height: 30px;
-    border: none;
-    background-color: white;
-    color: #a3a3a3;
-    text-transform: uppercase;
-    padding-left: 10px; }
-  .search button {
-    border: 0;
-    background: #fff;
-    position: absolute;
-    right: 5px;
-    top: 14px; }
-    .search button:hover {
-      cursor: pointer; }
-    .search button:focus {
-      outline: 0; }
-
-.nav li > nav.subnivel {
-  visibility: hidden;
-  width: 100%;
-  max-width: 1320px;
-  position: absolute;
-  top: 200px;
-  left: 0;
-  background-color: #242424; }
-
-.nav > ul > li:hover > nav.subnivel {
-  visibility: visible; }
-
-.nav > ul > li:hover > a {
-  background-color: #242424; }
-
-.subnivel {
-  border-bottom: 3px solid #ed1c24; }
-  .subnivel > ul.lista-carros {
-    padding-top: 30px; }
-    .subnivel > ul.lista-carros > li > a {
-      background-color: #474747;
-      padding: 10px 20px;
-      color: white;
-      font-weight: bold; }
-      .subnivel > ul.lista-carros > li > a:hover {
-        text-decoration: underline; }
-  .subnivel > ul.lista-teste {
-    background-color: #474747;
-    padding: 0;
-    padding-top: 15px; }
-    .subnivel > ul.lista-teste > li {
-      display: list-item;
-      padding: 10px 0;
+@media screen and (max-width: 900px) {
+  header {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    position: relative;
+    align-items: flex-start; }
+  .logo {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    text-align: center; }
+  .nav {
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+    .nav > button {
+      margin: 14px 10px 10px 10px;
+      background: none;
+      border: none; }
+    .nav > ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #d41f1f;
       width: 100%; }
-      .subnivel > ul.lista-teste > li:first-child {
-        background-color: #242424;
-        position: relative; }
-        .subnivel > ul.lista-teste > li:first-child:after {
-          position: absolute;
-          top: 13px;
-          right: 10px;
-          width: 0;
-          height: 0;
-          font-size: 14px;
+  .search-box {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+    .search-box input {
+      display: none; }
+    .search-box button {
+      background: none;
+      width: 16px;
+      height: 16px;
+      background-image: url(../assets/search-mb.png);
+      border: none;
+      margin: 13px 10px 10px 10px; }
+  .ad-header {
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+  .subnav {
+    display: none; } }
+
+@media screen and (min-width: 900px) {
+  .nav {
+    height: auto;
+    padding: 1em 0; }
+    .nav > ul {
+      margin-top: 13px;
+      margin-bottom: 5px; }
+      .nav > ul > li {
+        display: inline-block; }
+        .nav > ul > li > a {
           color: white;
-          content: '❯'; }
-      .subnivel > ul.lista-teste > li > a {
-        padding: 5px 50px;
+          text-transform: uppercase;
+          font-weight: 700;
+          padding-top: 27px;
+          font-size: .9em;
+          padding-bottom: 29px;
+          padding-left: 15px;
+          padding-right: 24px;
+          position: relative; }
+          .nav > ul > li > a:hover {
+            background: #242424;
+            text-decoration: underline; }
+            .nav > ul > li > a:hover .subnivel {
+              visibility: 1; }
+          .nav > ul > li > a:focus {
+            position: absolute;
+            top: 3px;
+            right: -5px;
+            font-size: 14px;
+            color: white;
+            content: '❯';
+            transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg); }
+          .nav > ul > li > a:after {
+            position: absolute;
+            top: 33px;
+            right: 7px;
+            width: 0;
+            height: 0;
+            font-size: 14px;
+            color: white;
+            content: '❯';
+            transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg); }
+          .nav > ul > li > a.no-arrow {
+            padding-right: 15px; }
+          .nav > ul > li > a.no-arrow:after {
+            content: ''; }
+  .subnav {
+    background-color: #242424; }
+    .subnav li {
+      display: inline;
+      padding: 5px 10px; }
+    .subnav a {
+      font-size: .9em;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase; }
+      .subnav a:hover {
+        text-decoration: underline; }
+  .search {
+    position: relative; }
+    .search input {
+      margin-top: 7px;
+      height: 30px;
+      width: 100%;
+      border: none;
+      background-color: white;
+      color: #a3a3a3;
+      text-transform: uppercase;
+      padding-left: 10px; }
+    .search button {
+      border: 0;
+      background: #fff;
+      position: absolute;
+      right: 5px;
+      width: 16px;
+      height: 16px;
+      background-image: url(../assets/search.png);
+      top: 14px; }
+      .search button:hover {
+        cursor: pointer; }
+      .search button:focus {
+        outline: 0; }
+  .nav li > nav.subnivel {
+    visibility: hidden;
+    width: 100%;
+    max-width: 1320px;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    background-color: #242424; }
+  .nav > ul > li:hover > nav.subnivel {
+    visibility: visible; }
+  .nav > ul > li:hover > a {
+    background-color: #242424; }
+  .subnivel {
+    border-bottom: 3px solid #ed1c24; }
+    .subnivel > ul.lista-carros {
+      padding-top: 30px; }
+      .subnivel > ul.lista-carros > li > a {
+        background-color: #474747;
+        padding: 10px 20px;
         color: white;
         font-weight: bold; }
-        .subnivel > ul.lista-teste > li > a:hover {
+        .subnivel > ul.lista-carros > li > a:hover {
           text-decoration: underline; }
-  .subnivel .lista-carros-marcas {
-    margin: 0; }
-    .subnivel .lista-carros-marcas > li {
-      display: inline-block;
-      padding: 10px;
-      width: 20%;
-      float: left; }
-      .subnivel .lista-carros-marcas > li a {
-        padding: 10px;
-        color: white; }
-        .subnivel .lista-carros-marcas > li a:hover {
-          text-decoration: underline; }
-  .subnivel .lista-teste-itens {
-    margin: 0; }
-    .subnivel .lista-teste-itens > li {
-      display: inline-block;
-      padding: 10px;
-      width: 20%;
-      float: left; }
-      .subnivel .lista-teste-itens > li a {
-        color: #ed1c24;
-        font-weight: bold; }
-        .subnivel .lista-teste-itens > li a h3 {
+    .subnivel > ul.lista-teste {
+      background-color: #474747;
+      padding: 0;
+      padding-top: 15px; }
+      .subnivel > ul.lista-teste > li {
+        display: list-item;
+        padding: 10px 0;
+        width: 100%; }
+        .subnivel > ul.lista-teste > li:first-child {
+          background-color: #242424;
+          position: relative; }
+          .subnivel > ul.lista-teste > li:first-child:after {
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            font-size: 14px;
+            color: white;
+            content: '❯'; }
+        .subnivel > ul.lista-teste > li > a {
+          padding: 5px 50px;
           color: white;
-          padding-top: 10px;
-          line-height: 23px; }
-        .subnivel .lista-teste-itens > li a:hover {
-          text-decoration: underline; }
+          font-weight: bold; }
+          .subnivel > ul.lista-teste > li > a:hover {
+            text-decoration: underline; }
+    .subnivel .lista-carros-marcas {
+      margin: 0; }
+      .subnivel .lista-carros-marcas > li {
+        display: inline-block;
+        padding: 10px;
+        width: 20%;
+        float: left; }
+        .subnivel .lista-carros-marcas > li a {
+          padding: 10px;
+          color: white; }
+          .subnivel .lista-carros-marcas > li a:hover {
+            text-decoration: underline; }
+    .subnivel .lista-teste-itens {
+      margin: 0; }
+      .subnivel .lista-teste-itens > li {
+        display: inline-block;
+        padding: 10px;
+        width: 20%;
+        float: left; }
+        .subnivel .lista-teste-itens > li a {
+          color: #ed1c24;
+          font-weight: bold; }
+          .subnivel .lista-teste-itens > li a h3 {
+            color: white;
+            padding-top: 10px;
+            line-height: 23px; }
+          .subnivel .lista-teste-itens > li a:hover {
+            text-decoration: underline; } }
+
+@media screen and (max-width: 1180px) {
+  .nav > ul > li {
+    padding-bottom: 30px; } }

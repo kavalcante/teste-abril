@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/main.js"></script>
     <title>Quatro Rodas</title>
     </head>
     <body>
@@ -18,6 +17,7 @@
           <a href="#"><img src="assets/logo.png" alt="Logo Quatro Rodas" /></a>
         </div>
         <nav class="nav col-8">
+          <button id="menu" onclick="menuExpand()"><img src="assets/menuhb.png" alt="Menu"></button>
           <ul>
             <li>
               <a href="#">Carros</a>
@@ -93,10 +93,10 @@
             <li><a href="#" class="no-arrow">Assine</a></li>
           </ul>
         </nav>
-        <div class="col-2">
+        <div class="col-2 search-box">
           <form class="search" action="">
             <input type="text" placeholder="Pesquisar">
-            <button type="submit"><img src="assets/search.png" alt="Search Icon"></button>
+            <button id="search" type="submit"></button>
           </form>
         </div>
         <nav class="subnav col-12">
@@ -119,5 +119,6 @@
       <section></section>
       <section></section>
     </div>
+    <script type="text/javascript" src="js/menu.js"></script>
     </body>
 </html>
